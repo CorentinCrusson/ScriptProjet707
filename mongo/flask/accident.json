@@ -1,0 +1,17 @@
+{ "accidents":
+    [{
+        "id":162,
+        "date_debut": "14h50",
+        "date_fin": "16h45",
+        "nb_pers": 6,
+        "position": "48L52P"
+    },
+    {
+        "id":895,
+        "date_debut": "05h14",
+	"date_fin":"16h01",
+	"nb_pers": 80,
+        "position": "P474L52P" 
+    }]
+}
+

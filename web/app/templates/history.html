@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="accident">
+	<h2> Liste des Accidents </h2>
+        <table id="data" class="table table-striped">
+        <thead>
+        <tr>
+		<th>Identifiant Accident</th>
+                <th>Date de Debut</th>
+                <th>Date de Fin</th>
+                <th>Nombre de Personnes impactes</th>
+                <th>Position GPS</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for accident in accidents %}
+        <tr>
+		<td>{{ accident.id }}</td>
+                <td>{{ accident.date_debut }}</td>
+                <td>{{ accident.date_fin }}</td>
+                <td>{{ accident.nb_pers }}</td>
+                <td>{{ accident.position }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+	</div>
+{% endblock %}
+

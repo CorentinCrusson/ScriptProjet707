@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="actualites">
+	<h2> Actualites </h2>
+	{% if stat %}
+	<p> Il y a actuellement {{ stat.nombre_vehicules }} vehicules sur la route, roulant en moyenne a une vitesse de {{ stat.vitesse_moy }} km/h. </p>
+        {% if stat.embouteillage > 3 %}
+        <p><br> Nous signalons un embouteillage sur la route avec {{ stat.embouteillage }} vehicules impliquees. <p>
+        {% endif %}
+	{% else %}
+	<p> Le site connait actuellement des pertubations au niveau de son reseau informatique. <p>
+	{% endif %}
+	</div>
+	<div class="accidents">
+	<h2> Liste des Accidents </h2>
+	<table id="data" class="table table-striped">
+    	<thead>
+      	<tr>
+        	<th>Heure de Debut</th>
+               	<th>Nombre de Personnes impactes</th>
+        	<th>Position GPS</th>
+      	</tr>
+    	</thead>
+    	<tbody>
+      	{% for accident in accidents %}
+        <tr>
+          	<td>{{ accident.heure_debut }}</td>
+             	<td>{{ accident.nb_pers }}</td>
+          	<td>{{ accident.position }}</td>
+        </tr>
+      	{% endfor %}
+    	</tbody>
+	</table>
+	</div>
+
+{% endblock %}
+
